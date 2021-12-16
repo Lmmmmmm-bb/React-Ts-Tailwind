@@ -26,7 +26,7 @@
     "prepare": "husky install",
     "check": "npx prettier --check .",
     "format": "npx prettier --write .",
-    "commit": "cz"
+    "commit": "./node_modules/cz-customizable/standalone.js"
   },
   "eslintConfig": {
     "extends": [
@@ -58,7 +58,7 @@
     "eslint": "^8.4.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-react": "^7.27.1",
-    "husky": "^7.0.4",
+    "husky": "^7.0.0",
     "lint-staged": "^12.1.2",
     "postcss": "^8.4.5",
     "prettier": "2.5.1",
@@ -66,11 +66,6 @@
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-customizable"
-    }
   },
   "husky": {
     "hooks": {
