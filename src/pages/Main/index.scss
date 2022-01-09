@@ -1,0 +1,45 @@
+.main-wrapper {
+  text-align: left;
+
+  .main-banner {
+    width: 800px;
+  }
+
+  .main-section {
+    margin-top: 16px;
+    width: 800px;
+
+    .section-title {
+      font-size: 24px;
+      font-weight: 500;
+      border-bottom: 1px solid #d8dee4;
+    }
+
+    .section-main {
+      margin-top: 16px;
+
+      .section-desc {
+        margin-bottom: 16px;
+      }
+
+      .section-list {
+        margin: 16px 0;
+        padding-left: 40px;
+        list-style-type: disc;
+
+        &-item + li {
+          margin-top: 4px;
+          font-size: 16px;
+        }
+      }
+
+      .section-code {
+        padding: 0.2em 0.4em;
+        margin: 0;
+        font-size: 85%;
+        background-color: #afb8c133;
+        border-radius: 6px;
+      }
+    }
+  }
+}
