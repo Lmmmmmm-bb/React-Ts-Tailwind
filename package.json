@@ -27,7 +27,7 @@
     "prepare": "husky install",
     "check": "npx prettier --check .",
     "format": "npx prettier --write .",
-    "commit": "cz"
+    "commit": "./node_modules/cz-customizable/standalone.js"
   },
   "eslintConfig": {
     "extends": [
@@ -67,11 +67,6 @@
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-customizable"
-    }
   },
   "husky": {
     "hooks": {
