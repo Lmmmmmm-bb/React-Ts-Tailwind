@@ -13,6 +13,7 @@
 - React-Router-DOM
 - Typescript
 - Scss
+- Typed-Scss-Modules
 - Tailwind CSS
 
 改造 `create-react-app` 创建的项目，添加了 `Scss`，`Tailwind CSS` 支持。
@@ -28,3 +29,28 @@
 支持 `Commitlint` 和定制 Commit 信息，可使用 `npm run commit` 代替 `git commit` 进行提交。
 
 可以通过修改 `.cz-config.js` 来对提示信息进行定制。
+
+## Scss 样式隔离
+
+依赖 Typed-Scss-Modules 进行样式隔离，但有以下限制。
+
+1. 需要将文件名命名为 `*.module.scss`。
+2. 文件名为 `index.scss` 的 Scss 文件将被忽略，不会自动生成 `.scss.d.ts` 文件。
+3. Scss 文件的类名命名需要使用小驼峰命名法。
+
+**如果有定制化需求可以根据 [typed-scss-modules 文档](https://github.com/skovy/typed-scss-modules) 对规则进行调整。**
+
+### 样式隔离如何使用
+
+```tsx
+import styles from './index.module.scss';
+
+export default <div className={styles.main}>Main</div>;
+```
+
+### 可能遇到的问题
+
+#### `index.module.scss` 配合 Tailwind CSS 使用 `@apply` 时提示 `Unknown at rule`
+
+在 VSCode 中的方法是 `setting.json` 中设置 `"scss.lint.unknownAtRules": "ignore"`，如果有更好的办法欢迎提 `PR` 或 `issue`。
+
