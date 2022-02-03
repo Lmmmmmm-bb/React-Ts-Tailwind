@@ -1,5 +1,5 @@
 import { FC, useEffect } from 'react';
-import './index.scss';
+import styles from './index.module.scss';
 
 import { Button, Toast } from '@douyinfe/semi-ui';
 
@@ -9,8 +9,9 @@ const Main: FC = () => {
   }, []);
 
   return (
-    <div className='Main text-center text-lg'>
+    <div className={styles.main}>
       <Button>Main</Button>
+      <div className={styles.mainText}>Main Text</div>
     </div>
   );
 };
